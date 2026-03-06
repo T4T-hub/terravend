@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -76,9 +79,16 @@
       align-items: center;
       z-index: 100;
       mix-blend-mode: normal;
-      background: rgba(250,247,242,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(200,184,154,0.2);
+      background: rgba(250,247,242,0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(200,184,154,0.18);
+      opacity: 0;
+      transform: translateY(-10px);
+      animation: navReveal 0.7s ease 0.1s forwards;
+    }
+    @keyframes navReveal {
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .nav-logo {
@@ -430,22 +440,25 @@
 
     .structure-visual {
       position: relative;
-      height: 440px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 0;
     }
 
     .struct-box {
-      position: absolute;
       border: 1px solid;
       display: flex;
       flex-direction: column;
       justify-content: center;
       padding: 2rem 2.5rem;
-      background: var(--cream);
+      position: relative;
     }
 
     .struct-box.main {
-      top: 0; left: 0;
-      width: 60%; height: 45%;
+      width: 65%;
       border-color: var(--accent);
       background: var(--accent);
       z-index: 2;
@@ -453,22 +466,14 @@
     .struct-box.main .struct-label { color: rgba(255,255,255,0.7); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.5rem; }
     .struct-box.main .struct-name { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; color: white; }
 
-    .struct-box.sub {
-      bottom: 0; right: 0;
-      width: 70%; height: 50%;
-      border-color: var(--stone);
-      z-index: 1;
-    }
-    .struct-box.sub .struct-label { color: var(--muted); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.5rem; }
-    .struct-box.sub .struct-name { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; color: var(--dark); }
-    .struct-box.sub .struct-note { margin-top: 0.8rem; font-size: 0.78rem; color: var(--muted); font-weight: 300; line-height: 1.6; }
-
     .struct-connector {
-      position: absolute;
-      top: 44%; left: 50%;
-      width: 1px; height: 12%;
+      width: 1px;
+      height: 48px;
       background: var(--stone);
+      margin-left: calc(65% / 2);
+      position: relative;
       z-index: 3;
+      flex-shrink: 0;
     }
     .struct-connector::before,
     .struct-connector::after {
@@ -483,6 +488,15 @@
     .struct-connector::before { top: -3px; }
     .struct-connector::after { bottom: -3px; }
 
+    .struct-box.sub {
+      width: 85%;
+      border-color: var(--stone);
+      background: var(--cream);
+      z-index: 1;
+    }
+    .struct-box.sub .struct-label { color: var(--muted); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .struct-box.sub .struct-name { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; color: var(--dark); }
+    .struct-box.sub .struct-note { margin-top: 0.8rem; font-size: 0.78rem; color: var(--muted); font-weight: 300; line-height: 1.6; }
     .structure-text h2 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2rem, 3.5vw, 3rem);
@@ -680,7 +694,10 @@
       .services-header { flex-direction: column; align-items: flex-start; gap: 2rem; }
       .services-grid { grid-template-columns: 1fr; }
       .structure { grid-template-columns: 1fr; gap: 4rem; padding: 7rem 2.5rem; }
-      .structure-visual { height: 320px; }
+      .structure-visual { height: auto; }
+      .struct-box.main { width: 75%; }
+      .struct-box.sub { width: 95%; }
+      .struct-connector { margin-left: calc(75% / 2); }
       footer { padding: 2.5rem; flex-direction: column; gap: 1rem; text-align: center; }
       .stats { gap: 2.5rem; }
       nav ul { gap: 1.5rem; }
