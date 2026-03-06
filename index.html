@@ -513,123 +513,7 @@
       max-width: 480px;
     }
 
-    /* ── CONTACT ── */
-    .contact {
-      padding: 10rem 5rem;
-      background: var(--sand);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8rem;
-      align-items: start;
-      border-top: 1px solid rgba(200,184,154,0.3);
-    }
-
-    .contact-left h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.5rem, 4vw, 4rem);
-      font-weight: 300;
-      line-height: 1.1;
-      color: var(--dark);
-      margin-bottom: 2rem;
-    }
-    .contact-left h2 em { font-style: italic; color: var(--accent); }
-
-    .contact-left p {
-      font-size: 0.9rem;
-      line-height: 1.85;
-      color: var(--muted);
-      font-weight: 300;
-      max-width: 380px;
-    }
-
-    .contact-details {
-      margin-top: 3.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .contact-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-    .contact-item .ci-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--stone);
-    }
-    .contact-item .ci-val {
-      font-size: 0.9rem;
-      color: var(--ink);
-      font-weight: 400;
-    }
-    .contact-item a.ci-val {
-      text-decoration: none;
-      color: var(--ink);
-      transition: color 0.2s;
-    }
-    .contact-item a.ci-val:hover { color: var(--accent); }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .form-group label {
-      font-size: 0.7rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .form-group input,
-    .form-group textarea {
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid var(--stone);
-      padding: 0.75rem 0;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.9rem;
-      color: var(--ink);
-      font-weight: 300;
-      outline: none;
-      transition: border-color 0.2s;
-      width: 100%;
-    }
-    .form-group input:focus,
-    .form-group textarea:focus { border-color: var(--accent); }
-    .form-group textarea { resize: none; min-height: 100px; }
-
-    .form-submit {
-      margin-top: 1rem;
-    }
-    .form-submit button {
-      padding: 0.9rem 2.5rem;
-      background: var(--dark);
-      color: var(--cream);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.78rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      border: none;
-      cursor: pointer;
-      transition: background 0.25s;
-    }
-    .form-submit button:hover { background: var(--accent); }
-
+   
     /* ── FOOTER ── */
     footer {
       padding: 3rem 5rem;
@@ -713,7 +597,6 @@
       <li><a href="#over">Over ons</a></li>
       <li><a href="#diensten">Diensten</a></li>
       <li><a href="#structuur">Structuur</a></li>
-      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
@@ -732,7 +615,6 @@
       </p>
       <div class="hero-cta">
         <a href="#over" class="btn-primary">Meer informatie</a>
-        <a href="#contact" class="btn-ghost">Contact opnemen →</a>
       </div>
       <div class="scroll-line">Scroll</div>
     </div>
@@ -916,16 +798,7 @@
     }, { threshold: 0.12 });
     reveals.forEach(el => io.observe(el));
 
-    // Form submit
-    function handleSubmit() {
-      const naam = document.getElementById('naam').value;
-      const email = document.getElementById('email').value;
-      if (!naam || !email) {
-        alert('Vul minimaal uw naam en e-mailadres in.');
-        return;
-      }
-      alert('Bedankt voor uw bericht! Wij nemen zo spoedig mogelijk contact met u op.');
-    }
+ 
   </script>
 </body>
 </html>
